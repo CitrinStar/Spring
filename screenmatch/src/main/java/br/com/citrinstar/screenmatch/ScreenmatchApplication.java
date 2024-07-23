@@ -8,19 +8,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScreenmatchApplication implements CommandLineRunner {
-
-	@Autowired
-	private SerieRepository repositorioSerie;
+public class ScreenmatchApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		//Alta coesão, baixo acoplamento: temos mais coesão do código quando temos poucas coisas acopladas
-		Center menu = new Center(repositorioSerie);
-		menu.exibeMenu();
-	}
 }
